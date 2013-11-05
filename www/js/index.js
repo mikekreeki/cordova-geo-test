@@ -34,6 +34,21 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
+        setTimeout(function(){
+          var geolocationSuccess = function onSuccess(position) {
+            var element = document.getElementById('app');
+            element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
+          'Longitude: ' + position.coords.longitude     + '<br />' +
+          '<hr />';
+          };
+          var geolocationError = function(){
+              var element = document.getElementById('app');
+              element.innerHTML = 'ERROR';
+          };
+          var options = { enableHighAccuracy: true };
+          navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, geolocationOptions);
+        }, 30000);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
