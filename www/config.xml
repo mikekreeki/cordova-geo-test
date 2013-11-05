@@ -20,10 +20,11 @@
 
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/console"/>
 
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.geolocation" />
-
+    <gap:plugin name="org.apache.cordova.console" />
     <feature name="debug-server" required="true">
         <param name="domain" value="http://weinre.mikekreeki.com" />
         <param name="key" value="test" />
